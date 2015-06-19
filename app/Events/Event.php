@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Events;
+namespace Brew\Events;
 
 abstract class Event
 {

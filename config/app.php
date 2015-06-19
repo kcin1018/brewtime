@@ -13,7 +13,7 @@ return [
     |
     */
 
-    'debug' => env('APP_DEBUG'),
+    'debug' => env('APP_DEBUG', true),
 
     /*
     |--------------------------------------------------------------------------
@@ -26,7 +26,7 @@ return [
     |
     */
 
-    'url' => 'http://localhost',
+    'url' => env('APP_URL', 'http://localhost'),
 
     /*
     |--------------------------------------------------------------------------
@@ -39,7 +39,7 @@ return [
     |
     */
 
-    'timezone' => 'UTC',
+    'timezone' => 'US/Eastern',
 
     /*
     |--------------------------------------------------------------------------
@@ -140,9 +140,9 @@ return [
         /*
          * Application Service Providers...
          */
-        App\Providers\AppServiceProvider::class,
-        App\Providers\EventServiceProvider::class,
-        App\Providers\RouteServiceProvider::class,
+        Brew\Providers\AppServiceProvider::class,
+        Brew\Providers\EventServiceProvider::class,
+        Brew\Providers\RouteServiceProvider::class,
 
     ],
 

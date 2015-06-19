@@ -1,0 +1,24 @@
+{
+  "name": "brewtime",
+  "version": "0.0.1",
+  "homepage": "https://github.com/kcin1018/brewtime",
+  "authors": [
+    "Nick Felicelli <nick.felicelli@gmail.com>"
+  ],
+  "description": "Brewing recipes and instructions",
+  "main": "public/index.php",
+  "keywords": [
+    "homebrew",
+    "beer",
+    "php",
+    "mobile"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}

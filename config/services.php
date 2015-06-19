@@ -30,7 +30,7 @@ return [
     ],
 
     'stripe' => [
-        'model'  => App\User::class,
+        'model'  => Brew\User::class,
         'key' => '',
         'secret' => '',
     ],
