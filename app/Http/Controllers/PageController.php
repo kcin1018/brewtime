@@ -12,4 +12,14 @@ class PageController extends Controller
     {
         return view('page.home');
     }
+
+    public function recipes(Request $request)
+    {
+        return view('page.recipes');
+    }
+
+    public function search(Request $request)
+    {
+        return view('page.search');
+    }
 }

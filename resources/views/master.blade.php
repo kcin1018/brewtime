@@ -27,13 +27,14 @@
         @yield('page-styles')
     </head>
     <body>
-        <div class="container-fluid page-content">
+        @include('header')
+
+        <div class="container-fluid page">
             @yield('content')
         </div>
         <div class="container-fluid footer">
             &copy; 2015 Nick Felicelli
         </div>
-        <div id="goto-top"><i class="fa fa-lg fa-fw fa-arrow-up"></i></div>
         <script src="{{ elixir('js/vendor.js') }}"></script>
         @yield('page-scripts')
     </body>

@@ -12,3 +12,5 @@
 */
 
 Route::get('/', ['as' => 'home', 'uses' => 'PageController@home']);
+Route::get('recipes', ['as' => 'recipes', 'uses' => 'PageController@recipes']);
+Route::get('search', ['as' => 'search', 'uses' => 'PageController@search']);

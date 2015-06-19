@@ -1,1 +1,74 @@
+$white: #ffffff;
+$black: #000000;
 
+.header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    padding: 15px;
+    background-color: darken($white, 5%);
+    font-size: 14pt;
+    text-align: center;
+    border-bottom: 1px solid darken($white, 15%);
+
+    .action {
+        position: absolute;
+        top: 0;
+        width: 33%;
+        padding: 15px;
+
+        &.left {
+            left: 0;
+            text-align: left;
+        }
+
+        &.right {
+            right: 0;
+            text-align: right;
+        }
+
+        a {
+            color: $black;
+            text-decoration: none;
+
+            &:hover {
+                color: $black;
+            }
+        }
+    }
+
+}
+
+
+.page {
+    padding-top: 70px;
+
+    .home {
+        .btn-action {
+            display: block;
+            width: 100%;
+            border: 1px solid darken($white, 15%);
+            margin-bottom: 15px;
+            text-align: center;
+            padding: 25px 0;
+            text-decoration: none;
+            color: $black;
+            font-size: 20pt;
+            cursor: pointer;
+
+            &:hover {
+                background-color: darken($white, 5%);
+            }
+        }
+    }
+}
+
+.footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    padding: 5px;
+    font-size: 8pt;
+    border-top: 1px solid darken($white, 15%);
+    text-align: center;
+}
