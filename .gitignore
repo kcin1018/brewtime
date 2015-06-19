@@ -2,3 +2,6 @@
 /node_modules
 .env
 /storage/database.sqlite
+/public/build
+/public/js
+/public/css
