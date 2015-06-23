@@ -18,7 +18,7 @@ class Recipe extends Model
      *
      * @var array
      */
-    protected $fillable = ['creator_id', 'name', 'style'];
+    protected $fillable = ['style_id', 'name', 'type', 'yield', 'original_g', 'final_g', 'alcohol', 'bitterness'];
 
     /**
      * The attributes excluded from the model's JSON form.

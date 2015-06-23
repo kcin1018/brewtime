@@ -22,7 +22,13 @@
         <meta name="msapplication-TileColor" content="#ffffff">
 
         <link rel="shortcut icon" href="{{ asset('favicon.ico') }}"/>
-        <link href="{{ elixir('css/vendor.css') }}" rel="stylesheet">
+        @if(app()->environment() == 'production')
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.5/css/bootstrap.min.css" rel="stylesheet">
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
+        @else
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.5/css/bootstrap.css" rel="stylesheet">
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.css" rel="stylesheet">
+        @endif
         <link href="{{ elixir('css/app.css') }}" rel="stylesheet">
         @yield('page-styles')
     </head>
@@ -35,7 +41,14 @@
         <div class="container-fluid footer">
             &copy; 2015 Nick Felicelli
         </div>
-        <script src="{{ elixir('js/vendor.js') }}"></script>
+        @if(app()->environment() == 'production')
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/react/0.13.3/react.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+        @else
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/react/0.13.3/react.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.js"></script>
+        @endif
+
         @yield('page-scripts')
     </body>
 </html>
