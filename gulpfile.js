@@ -7,5 +7,5 @@ elixir(function(mix) {
 /*        .babel([
             'global.js'
         ], 'public/js/brewtime.js')*/
-        .version(/*'public/js/brewtime.js',*/'public/css/app.css']);
+        .version([/*'public/js/brewtime.js',*/'public/css/app.css']);
 });

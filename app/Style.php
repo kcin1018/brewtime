@@ -26,4 +26,9 @@ class Style extends Model
      * @var array
      */
     protected $hidden = [];
+
+    public function display()
+    {
+        return $this->name . ' (' . $this->category . ')';
+    }
 }

@@ -26,4 +26,9 @@ class Brewery extends Model
      * @var array
      */
     protected $hidden = [];
+
+    public function display()
+    {
+        return $this->name . ' ' . $this->city . ', ' . $this->state;
+    }
 }

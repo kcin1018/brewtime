@@ -143,7 +143,6 @@ return [
         Brew\Providers\AppServiceProvider::class,
         Brew\Providers\EventServiceProvider::class,
         Brew\Providers\RouteServiceProvider::class,
-
     ],
 
     /*
@@ -191,7 +190,6 @@ return [
         'URL'       => Illuminate\Support\Facades\URL::class,
         'Validator' => Illuminate\Support\Facades\Validator::class,
         'View'      => Illuminate\Support\Facades\View::class,
-
     ],
 
 ];

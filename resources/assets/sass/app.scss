@@ -2,6 +2,7 @@ $white: #ffffff;
 $black: #000000;
 
 .header {
+    z-index: 1200;
     position: fixed;
     top: 0;
     width: 100%;
@@ -35,6 +36,10 @@ $black: #000000;
                 color: $black;
             }
         }
+
+        .input-group-addon {
+            cursor: pointer;
+        }
     }
 
 }
@@ -42,6 +47,11 @@ $black: #000000;
 
 .page {
     padding-top: 70px;
+    padding-bottom: 50px;
+
+    .slider {
+        width: 100% !important;
+    }
 
     .home {
         .btn-action {
@@ -64,6 +74,7 @@ $black: #000000;
 }
 
 .footer {
+    z-index: 1200;
     position: fixed;
     bottom: 0;
     width: 100%;
@@ -71,4 +82,5 @@ $black: #000000;
     font-size: 8pt;
     border-top: 1px solid darken($white, 15%);
     text-align: center;
+    background-color: $white;
 }

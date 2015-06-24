@@ -18,7 +18,7 @@ class Recipe extends Model
      *
      * @var array
      */
-    protected $fillable = ['style_id', 'name', 'type', 'yield', 'original_g', 'final_g', 'alcohol', 'bitterness'];
+    protected $fillable = ['brewery_id', 'style_id', 'name', 'type', 'yield', 'original_g', 'final_g', 'alcohol', 'bitterness'];
 
     /**
      * The attributes excluded from the model's JSON form.
@@ -26,4 +26,20 @@ class Recipe extends Model
      * @var array
      */
     protected $hidden = [];
+
+    public function creators()
+    {
+        return $this->hasMany('Brew\UserRecipe', 'recipe_id', 'id')
+            ->where('recipe_id', '=', $this->id);
+    }
+
+    public function brewery()
+    {
+        return $this->belongsTo('Brew\Brewery', 'brewery_id', 'id');
+    }
+
+    public function style()
+    {
+        return $this->belongsTo('Brew\Style', 'style_id', 'id');
+    }
 }

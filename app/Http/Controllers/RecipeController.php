@@ -5,18 +5,25 @@ namespace Brew\Http\Controllers;
 use Illuminate\Http\Request;
 use Brew\Http\Requests;
 use Brew\Http\Controllers\Controller;
-use Brew\Repositories\RecipeRepository as Recipe;
+use Brew\Repositories\RecipesRepository as Recipe;
+use Brew\Http\Requests\Recipe as RecipeRequest;
 
 class RecipeController extends Controller
 {
+    public function __construct(Recipe $recipe)
+    {
+        $this->recipe = $recipe;
+        $this->middleware('auth');
+    }
+
     /**
      * Display a listing of the resource.
      *
      * @return Response
      */
-    public function index(Recipe $recipe)
+    public function index()
     {
-        return $recipe->orderBy('name')->get();
+        return ['recipes' => $this->recipe->orderBy('name')->get()];
     }
 
     /**
@@ -26,7 +33,7 @@ class RecipeController extends Controller
      */
     public function create()
     {
-        //
+        return view('recipe.create');
     }
 
     /**
@@ -34,52 +41,57 @@ class RecipeController extends Controller
      *
      * @return Response
      */
-    public function store(Request $request)
+    public function store(RecipeRequest $request)
     {
-        //
+        $recipe = $this->recipe->create($request->all());
+
+        return ['recipe' => $recipe];
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  Recipe $recipe
+     * @param  int $recipeId
      * @return Response
      */
-    public function show(Recipe $recipe)
+    public function show($recipeId)
     {
-        //
+        $recipe = $this->recipe->find($recipeId);
+
+        return ['recipe' => $recipe];
     }
 
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  Recipe $recipe
+     * @param  int $recipeId
      * @return Response
      */
-    public function edit(Recipe $recipe)
+    public function edit(Recipe $recipeId)
     {
-        //
     }
 
     /**
      * Update the specified resource in storage.
      *
-     * @param  Recipe $recipe
+     * @param  int $recipeId
      * @return Response
      */
-    public function update(Recipe $recipe)
+    public function update($recipeId)
     {
-        //
+        $recipe = $this->recipe->update($request->all(), $recipeId);
+
+        return ['recipe' => $recipe];
     }
 
     /**
      * Remove the specified resource from storage.
      *
-     * @param  Recipe $recipe
+     * @param  int $recipeId
      * @return Response
      */
-    public function destroy(Recipe $recipe)
+    public function destroy($recipeId)
     {
-        //
+        $this->recipe->delete($recipeId);
     }
 }
